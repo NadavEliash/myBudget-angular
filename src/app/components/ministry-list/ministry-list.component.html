@@ -1,0 +1,13 @@
+<ul class="ministry-list-ul">
+    <li class="ministry-list" *ngFor="let ministry of ministries">
+        <ministry-preview [ministry]="ministry" />
+        <div class="action">
+            <button>
+                <img src="https://www.svgrepo.com/show/510965/edit-pencil-01.svg" alt="edit">
+            </button>
+            <button (click)="onRemoveMinistry(ministry._id)">
+                <img src="https://www.svgrepo.com/show/502608/delete-2.svg" alt="delete">
+            </button>
+        </div>
+    </li>
+</ul>
