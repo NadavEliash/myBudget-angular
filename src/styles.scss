@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
         Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(238, 255, 247);
     caret-color: transparent;
     color: rgb(55, 55, 55);
 }
@@ -19,6 +19,7 @@ body {
 .main-content {
     min-height: 90vh;
     margin-inline: 60px;
+    padding-top: 2rem;
 }
 
 h1,
@@ -33,4 +34,122 @@ p {
 
 input {
     caret-color: rgb(69, 69, 69);
+}
+
+.box-display {
+    position: relative;
+    background-color: rgba($color: #4eff7d, $alpha: 0.1);
+    border-radius: 1rem;
+    max-width: 500px;
+    min-width: 300px;
+    text-align: center;
+    padding-block: 1rem;
+    margin: auto;
+
+    .ministry-img,
+    .user-img {
+        width: 150px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-inline: .5rem;
+    }
+
+    h3 {
+        margin-bottom: 2rem;
+    }
+
+    .ministry-info,
+    .user-info {
+        width: 80%;
+        margin-inline: auto;
+        font-size: 1.3rem;
+        margin-block: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+        background-color: rgba(255, 255, 255, 0.02);
+        border-radius: 3rem;
+
+        img {
+            width: 35px;
+            filter: invert(.8);
+        }
+    }
+
+
+    a,
+    button {
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 3rem;
+        width: 60%;
+        min-width: 120px;
+        height: 3rem;
+        background-color: rgba($color: #00ff44, $alpha: 0.2);
+        cursor: pointer;
+        margin-inline: auto;
+        font-size: 1.3rem;
+        color: inherit;
+        margin-block: 1rem;
+
+        &:hover {
+            box-shadow: 0px 0px 5px 0px rgba(8, 8, 8, 0.4);
+            transition: .6s;
+            text-decoration: none;
+        }
+
+    }
+
+    .edit-form {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        text-align: left;
+        text-indent: 2rem;
+    }
+
+    input {
+        margin-block: .5rem;
+        margin-inline: auto;
+        height: 3rem;
+        width: 80%;
+        border-radius: .5rem;
+        font-size: 1.2rem;
+        text-indent: 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 0;
+        color: inherit;
+        caret-color: gray;
+    }
+
+    textarea {
+        margin-top: 1rem;
+        margin-inline: auto;
+        padding-top: 1rem;
+        height: 5rem;
+        width: 80%;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        text-indent: 1rem;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 0;
+        color: inherit;
+        caret-color: gray;
+        resize: none;
+    }
+
+    .save-button {
+        grid-column: 1/-1;
+    }
+
 }

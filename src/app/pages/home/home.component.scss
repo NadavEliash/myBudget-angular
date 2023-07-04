@@ -14,7 +14,7 @@
         border: 0;
         font-size: 2.5rem;
         font-weight: 600;
-        background-color: rgba(20, 0, 152, 0.3);
+        background-color: rgba(38, 255, 0, 0.4);
         color: rgb(56, 56, 56);
         width: 40%;
         min-width: 300px;
@@ -23,5 +23,10 @@
         padding: 2rem;
         margin-top: 2rem;
         cursor: pointer;
+
+        &:hover {
+            box-shadow: 0px 0px 5px 0px rgba(17, 255, 0, 0.6);
+            transition: .4s;
+        }
     }
 }

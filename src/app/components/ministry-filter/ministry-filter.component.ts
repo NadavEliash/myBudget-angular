@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Filter } from 'src/app/models/filter.model';
 import { MinistryService } from 'src/app/services/ministry.service';
 
@@ -7,7 +7,7 @@ import { MinistryService } from 'src/app/services/ministry.service';
   templateUrl: './ministry-filter.component.html',
   styleUrls: ['./ministry-filter.component.scss']
 })
-export class MinistryFilterComponent {
+export class MinistryFilterComponent implements OnInit {
 
   constructor(private ministryService: MinistryService) { }
 
@@ -17,6 +17,11 @@ export class MinistryFilterComponent {
 
   sortBy: Filter = {
     term: ''
+  }
+
+  ngOnInit(): void {
+      this.filterBy = {term: ''}
+      this.onSetFilter()
   }
 
   onSetFilter() {

@@ -1,5 +1,5 @@
 <section class="ministry-index main-content">
     <ministry-filter />
-    <a routerLink="/edit">Add a New Interest</a>
+    <a class="add-ministry" routerLink="/edit">Add a New Interest</a>
     <ministry-list [ministries]="ministries$ | async" (removeMinistry)="onRemoveMinistry($event)" />
 </section>

@@ -1,0 +1,22 @@
+.add-ministry {
+    display: block;
+    background-color: rgba($color: #00ff44, $alpha: 0.2);
+    border-radius: 2rem;
+    padding: .8rem;
+    margin-inline: 1rem;
+    margin-block: 1rem;
+    height: 3rem;
+    max-width: 560px;
+    min-width: 300px;
+    padding-inline: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    text-align: center;
+
+    &:hover {
+        transition: .2s;
+        box-shadow: 0px 0px 5px 0px rgba(8, 8, 8, 0.4);
+    }
+}

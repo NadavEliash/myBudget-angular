@@ -3,7 +3,7 @@
         <input [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilter()" type="text" name="term" id="term"
             placeholder="Search">
     </form>
-    <div class="sortBy" (click)="toggleSort()">Sort By :
+    <div class="sortBy" (click)="toggleSort()">Sort By <img class="arow-down" src="https://www.svgrepo.com/show/509899/down-chevron.svg" alt="down">
         <div [class]="isOnSort? 'sort' : 'sort hide'">
             <div (click)="setSortBy('priority')">Priority</div>
             <div (click)="setSortBy('name')">Name</div>

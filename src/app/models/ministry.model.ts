@@ -5,6 +5,7 @@ export class Ministry {
         public name: string = '',
         public priority: number = 10,
         public description: string = '',
+        public imgUrl?: string
     ) { }
 
     setId?(id: string = 'r101') {

@@ -1,5 +1,5 @@
 .filter {
-
+    
     position: relative;
     display: flex;
     flex-direction: row;
@@ -9,12 +9,13 @@
     min-width: 320px;
 
     form {
-        margin-top: 3rem;
         margin-inline: 1rem;
         margin-bottom: 1rem;
         flex-grow: 1;
 
         input {
+            margin-top: 1rem;
+            margin-left: 1rem;
             height: 3rem;
             width: 95%;
             border-radius: 2rem;
@@ -39,21 +40,28 @@
     .sortBy {
         position: relative;
         cursor: pointer;
+        
+        .arow-down {
+            width: 15px;
+            translate: 0 20%;
+        }
     }
+
 
     .sort {
         position: absolute;
-        right: -.5rem;
-        top: 2rem;
+        right: -5rem;
+        top: -.4rem;
         opacity: 1;
-        background-color: rgb(235, 235, 235);
-        padding: .5rem;
-        padding-inline: 1rem;
-        line-height: 2rem;
+        border-radius: 1rem;
+        padding-inline: 1.3rem;
+        line-height: 2.5rem;
         z-index: 10;
         scale: 1 1;
         transition: .4s;
         cursor: pointer;
+        text-align: center;
+        font-weight: 600;
 
         &.hide {
             scale: 1 0;

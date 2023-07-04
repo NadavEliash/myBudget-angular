@@ -5,6 +5,7 @@ import { MinistryDetailsComponent } from './pages/ministry-details/ministry-deta
 import { MinistryEditComponent } from './pages/ministry-edit/ministry-edit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'ministry',

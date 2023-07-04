@@ -19,9 +19,14 @@
         gap: 1rem;
 
         img {
-            width: 30px;
+            width: 25px;
             filter: invert(.4);
             margin-top: 8px;
+
+            &:hover{
+                filter: invert(0);
+                transition: .4s;
+            }
         }
     }
 }

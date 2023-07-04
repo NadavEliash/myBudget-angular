@@ -1,0 +1,14 @@
+<main class="login main-content">
+    <section class="box-display">
+        <h2>Let's Go!</h2>
+        <h3>Login and start spend the state's budget</h3>
+        <form class="login-form" (ngSubmit)="onLogin()">
+            <label for="name"></label>
+            <input [(ngModel)]="userName" type="text" name="name" id="name" placeholder="Your Name">
+
+            <button class="save-button">Login</button>
+        </form>
+
+        <a routerLink="/">I'm not ready yet..</a>
+    </section>
+</main>

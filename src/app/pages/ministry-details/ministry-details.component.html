@@ -1,4 +1,9 @@
-<main class="main-content">
-    <pre>{{ministry | json}}</pre>
-    <a routerLink="/ministry">Back</a>
+<main *ngIf="ministry" class="main-content">
+    <section class="box-display">
+        <img class="ministry-img" src={{ministry.imgUrl}} alt="ministry">
+        <h2>{{ministry.name}}</h2>
+        <h3>priority: {{ministry.priority}}</h3>
+        <p>{{ministry.description}}</p>
+        <a routerLink="/ministry">Back</a>
+    </section>
 </main>

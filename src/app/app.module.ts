@@ -15,6 +15,7 @@ import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MinistryPreviewComponent,
     StatisticsComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
