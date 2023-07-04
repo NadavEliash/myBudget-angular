@@ -1,1 +1,12 @@
-<p>ministry-filter works!</p>
+<section class="filter">
+    <form>
+        <input [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilter()" type="text" name="term" id="term"
+            placeholder="Search">
+    </form>
+    <div class="sortBy" (click)="toggleSort()">Sort By :
+        <div [class]="isOnSort? 'sort' : 'sort hide'">
+            <div (click)="setSortBy('priority')">Priority</div>
+            <div (click)="setSortBy('name')">Name</div>
+        </div>
+    </div>
+</section>

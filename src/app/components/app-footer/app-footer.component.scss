@@ -1,0 +1,27 @@
+.app-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 5vh;
+    gap: 1rem;
+    border-top: 1px solid rgba($color: #000000, $alpha: .2);
+    font-family: monospace;
+
+    .angular {
+        width: 35px;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        img {
+            width: 30px;
+            filter: invert(.4);
+            margin-top: 8px;
+        }
+    }
+}

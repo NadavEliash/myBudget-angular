@@ -1,4 +1,5 @@
-<section class="ministry-index">
+<section class="ministry-index main-content">
     <ministry-filter />
-    <ministry-list [ministries]="ministries" (removeMinistry)="onRemoveMinistry($event)"/>
+    <a routerLink="/edit">Add a New Interest</a>
+    <ministry-list [ministries]="ministries$ | async" (removeMinistry)="onRemoveMinistry($event)" />
 </section>

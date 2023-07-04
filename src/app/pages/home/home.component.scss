@@ -1,0 +1,27 @@
+.home-page {
+    .top {
+        border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+    h1 {
+        font-size: 5rem;
+        line-height: 8rem;
+        margin-top: 10%;
+        width: 80%;
+    }
+
+    button {
+        border: 0;
+        font-size: 2.5rem;
+        font-weight: 600;
+        background-color: rgba(20, 0, 152, 0.3);
+        color: rgb(56, 56, 56);
+        width: 40%;
+        min-width: 300px;
+        text-align: center;
+        border-radius: 10px 10rem 10rem 10px;
+        padding: 2rem;
+        margin-top: 2rem;
+        cursor: pointer;
+    }
+}

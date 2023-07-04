@@ -9,16 +9,15 @@ import { MinistryService } from 'src/app/services/ministry.service';
   styleUrls: ['./ministry-index.component.scss']
 })
 export class MinistryIndexComponent implements OnInit, OnDestroy {
-  
+
   constructor(private ministryService: MinistryService) { }
   ministries: Ministry[] | null = null
   ministries$!: Observable<Ministry[]>
   subscription!: Subscription
 
   ngOnInit(): void {
-    this.subscription = this.ministryService.loadMinistries().subscribe(ministries => {
-      this.ministries = ministries
-    })
+    this.subscription = this.ministryService.loadMinistries().subscribe()
+    this.ministries$ = this.ministryService.ministries$
   }
 
   ngOnDestroy(): void {

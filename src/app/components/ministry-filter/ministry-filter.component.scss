@@ -1,0 +1,66 @@
+.filter {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    max-width: 600px;
+    min-width: 320px;
+
+    form {
+        margin-top: 3rem;
+        margin-inline: 1rem;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+
+        input {
+            height: 3rem;
+            width: 95%;
+            border-radius: 2rem;
+            font-size: 1rem;
+            text-indent: 1rem;
+            border: 0;
+            box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.4);
+
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        img {
+            width: 25px;
+            position: absolute;
+            translate: -160% 45%;
+
+        }
+    }
+
+    .sortBy {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .sort {
+        position: absolute;
+        right: -.5rem;
+        top: 2rem;
+        opacity: 1;
+        background-color: rgb(235, 235, 235);
+        padding: .5rem;
+        padding-inline: 1rem;
+        line-height: 2rem;
+        z-index: 10;
+        scale: 1 1;
+        transition: .4s;
+        cursor: pointer;
+
+        &.hide {
+            scale: 1 0;
+            transform-origin: top;
+            top: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

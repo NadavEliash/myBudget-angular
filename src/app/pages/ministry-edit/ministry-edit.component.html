@@ -1,1 +1,16 @@
-<p>ministry-edit works!</p>
+<section class="main-content">
+    <form (ngSubmit)="onSaveMinistry()">
+        <label for="name">Name</label>
+        <input [(ngModel)]="ministry.name" type="text" name="name" id="name">
+
+        <label for="priority">Priority</label>
+        <input [(ngModel)]="ministry.priority" type="number" name="priority" id="priority">
+
+        <label for="description">Description</label>
+        <textarea [(ngModel)]="ministry.description" type="" name="description" id="description"></textarea>
+
+        <button>Save</button>
+    </form>
+
+    <a routerLink="/ministry">Back</a>
+</section>

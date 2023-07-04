@@ -1,10 +1,46 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MinistryIndexComponent } from './pages/ministry-index/ministry-index.component';
+import { MinistryDetailsComponent } from './pages/ministry-details/ministry-details.component';
+import { MinistryEditComponent } from './pages/ministry-edit/ministry-edit.component';
+import { HomeComponent } from './pages/home/home.component';
+import { StatisticsComponent } from './pages/statistics/statistics.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '', 
+    redirectTo: '', 
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'ministry',
+    component: MinistryIndexComponent
+  },
+  {
+    path: 'ministry/:id',
+    component: MinistryDetailsComponent
+  },
+  {
+    path: 'edit',
+    component: MinistryEditComponent
+  },
+  {
+    path: 'edit/:id',
+    component: MinistryEditComponent
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent
+  }
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

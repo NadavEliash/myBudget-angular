@@ -11,7 +11,8 @@ export class MinistryListComponent {
   @Output() removeMinistry = new EventEmitter<string>()
 
 
-  onRemoveMinistry(ministryId: string | undefined) {
+  onRemoveMinistry(event: Event, ministryId: string | undefined) {
+    event.stopPropagation()
     this.removeMinistry.emit(ministryId)
   }
 }

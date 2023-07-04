@@ -9,18 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-budget'
 
-  onSelectPage(page: string) {
-    this.currPage = {
-      home: false,
-      ministry: false,
-      statistics: false
-    }
-    this.currPage[page] = true
-  }
-
-  currPage: { [key: string]: boolean } = {
-    home: true,
-    ministry: false,
-    statistics: false
-  }
 }

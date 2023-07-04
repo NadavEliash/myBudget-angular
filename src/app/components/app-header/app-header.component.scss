@@ -1,0 +1,140 @@
+.app-header {
+    margin-inline: 60px;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    height: 5vh;
+    gap: 4rem;
+
+    .balance {
+        position: absolute;
+        translate: 10vw 8px;
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 2rem;
+        padding: 1rem;
+        padding-top: .5rem;
+        text-indent: 1rem;
+        line-height: 2.5rem;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+        font-size: 1.3rem;
+        color: white;
+
+        img {
+            width: 30px;
+            filter: invert(1);
+            translate: 0 -12%;
+        }
+    }
+
+    .logo {
+        cursor: pointer;
+        flex-grow: 1;
+
+        img {
+            width: 40px;
+            translate: 0 40%;
+        }
+    }
+
+    a {
+        color: rgb(61, 61, 61);
+        text-decoration: none;
+        text-align: end;
+        padding: 0;
+        margin: 0;
+
+        &:first-child {
+            text-align: start;
+        }
+
+
+    }
+
+    button {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        font-size: inherit;
+        font-family: inherit;
+        color: rgb(61, 61, 61);
+    }
+
+    .responsive-navbar {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+
+        @media(max-width: 600px) {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            align-items: center;
+            background-color: rgba(3, 4, 29, 0.9);
+            font-size: 2.5rem;
+            gap: 2rem;
+            padding: 1rem;
+            margin-left: -18rem;
+            margin-top: 18rem;
+            opacity: 0;
+            scale: 1 0;
+            transition: .4s;
+            pointer-events: none;
+
+            &.show {
+                margin-left: -2.5rem;
+                scale: 1 1;
+                opacity: 1;
+                transition: .6s;
+                z-index: 10;
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+
+        .user-avatar {
+            position: relative;
+
+            img {
+                width: 40px;
+                margin-top: 1rem;
+                cursor: pointer;
+            }
+
+            .user-bar {
+                position: absolute;
+                right: 8px;
+                padding: .7rem;
+                border-radius: .5rem;
+                width: max-content;
+                background-color: rgba(255, 255, 255, 0.1);
+                font-size: 1rem;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+
+                a {
+                    font-size: 1.25rem;
+                    color: rgb(255, 255, 255);
+                    margin-top: 2rem;
+                }
+
+                h3 {
+                    margin-block: .6rem;
+                }
+            }
+        }
+
+    }
+}

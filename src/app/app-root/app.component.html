@@ -1,10 +1,5 @@
 <section class="app-root">
     <app-header></app-header>
-    <button (click)="onSelectPage('home')">Home</button>
-    <button (click)="onSelectPage('ministry')">Ministries</button>
-    <button (click)="onSelectPage('statistics')">Statistics</button>
-    <home *ngIf="currPage['home']"></home>
-    <ministry-index *ngIf="currPage['ministry']"></ministry-index>
-    <statistics *ngIf="currPage['statistics']"></statistics>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
 </section>
