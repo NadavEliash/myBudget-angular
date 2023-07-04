@@ -16,6 +16,7 @@ import { AppHeaderComponent } from './components/app-header/app-header.component
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
+import { SpendComponent } from './components/spend/spend.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
     StatisticsComponent,
     AppHeaderComponent,
     AppFooterComponent,
-    LoginComponent
+    LoginComponent,
+    SpendComponent
   ],
   imports: [
     BrowserModule,

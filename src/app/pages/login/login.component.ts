@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service.service';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   constructor(
     private userService: UserService,
@@ -19,11 +19,15 @@ export class LoginComponent {
   ) { }
 
   userName: string = ''
+  user$!: Observable<User>
   subscription!: Subscription
 
-  async onLogin() {
-    const user = await this.userService.getUser(this.userName)
+  ngOnInit(): void {
+    this.user$ = this.userService.loggedinUser$
+  }
+
+  onLogin() {
+    this.subscription = this.userService.getUser(this.userName).subscribe()
     this.router.navigate(['/ministry'])
-    console.log(user)
   }
 }

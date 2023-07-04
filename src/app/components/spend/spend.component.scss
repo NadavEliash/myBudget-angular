@@ -1,0 +1,27 @@
+.spend-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    input {
+        border-radius: 1rem;
+        background-color: rgba(255, 255, 255, .8);
+        line-height: 1.5rem;
+        text-indent: 1rem;
+        width: 40%;
+    }
+
+    button {
+        border-radius: 1rem;
+        line-height: 1.5rem;
+        background-color: rgba($color: #00ff44, $alpha: 0.2);
+
+        &:hover {
+            transition: .2s;
+            box-shadow: 0px 0px 5px 0px rgba(8, 8, 8, 0.4);
+        }
+    }
+}

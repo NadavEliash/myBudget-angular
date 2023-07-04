@@ -27,12 +27,11 @@
     margin-block: 1rem;
     background-color: rgba($color: #4eff7d, $alpha: 0.1);
     border-radius: 2rem;
-    padding: .8rem;
+    padding: 1rem;
     margin-inline: auto;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1fr;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
 
     &:first-child {
@@ -46,7 +45,6 @@
 }
 
 .action {
-    margin-top: .7rem;
 
     button {
         margin-inline: 5px;

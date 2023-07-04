@@ -1,0 +1,6 @@
+<section class="spend-box" *ngIf="user?.name">
+    <form (ngSubmit)="onSpend(ministry.name, +spend.value)">
+        $<input #spend type="number">
+        <button>send</button>
+    </form>
+</section>

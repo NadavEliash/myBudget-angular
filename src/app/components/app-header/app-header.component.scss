@@ -18,15 +18,13 @@ nav {
         translate: 10vw 8px;
         display: flex;
         flex-direction: row;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba($color: #4eff7d, $alpha: 0.1);
         border-radius: 2rem;
         padding: 1rem;
         padding-top: .5rem;
-        text-indent: 1rem;
         line-height: 2.5rem;
         text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         font-size: 1.3rem;
-        color: white;
 
         img {
             width: 30px;

@@ -3,8 +3,9 @@
         <a class="logo" routerLink="/">
             <img src="https://www.svgrepo.com/show/426317/money-bag-dollar.svg" alt="Home">
         </a>
-        <a routerLink="/ministry">spend</a>
-        <a routerLink="/statistics">statistics</a>
+        <div *ngIf="user?.name" class="balance">Hi {{user?.name}}! You have ${{user?.balance}} billion to spend</div>
+        <a routerLink="/ministry">Interests</a>
+        <a routerLink="/statistics">Charts</a>
         <a routerLink="/login">Join</a>
     </nav>
 </section>
