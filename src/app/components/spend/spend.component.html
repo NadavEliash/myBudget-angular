@@ -1,6 +1,7 @@
 <section class="spend-box" *ngIf="user?.name">
-    <form (ngSubmit)="onSpend(ministry.name, +spend.value)">
-        $<input #spend type="number">
-        <button>send</button>
+    <form (ngSubmit)="onSpend(ministry._id!, ministry.name, +spend.value)">
+        $<input [(ngModel)]="amount" #spend type="number" name="amount">
+        <button>add</button>
     </form>
+    <button (click)="clearAction(ministry.name)" class="clear-button">x</button>
 </section>

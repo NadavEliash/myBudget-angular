@@ -1,5 +1,9 @@
 .app-header {
-    margin-inline: 60px;
+    margin-inline: 80px;
+
+    @media(max-width: 600px) {
+        margin-inline: 20px;
+    }
 }
 
 nav {
@@ -15,16 +19,16 @@ nav {
 
     .balance {
         position: absolute;
-        translate: 10vw 8px;
+        right: 0;
+        top: 6vh;
         display: flex;
         flex-direction: row;
         background-color: rgba($color: #4eff7d, $alpha: 0.1);
         border-radius: 2rem;
-        padding: 1rem;
-        padding-top: .5rem;
-        line-height: 2.5rem;
+        padding: .5rem;
         text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-        font-size: 1.3rem;
+        font-size: 1rem;
+        font-weight: 600;
 
         img {
             width: 30px;
@@ -75,6 +79,7 @@ nav {
         font-size: inherit;
         font-family: inherit;
         color: rgb(61, 61, 61);
+        cursor: pointer;
     }
 
     .responsive-navbar {

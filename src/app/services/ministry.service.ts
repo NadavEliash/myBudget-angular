@@ -85,7 +85,7 @@ export class MinistryService {
         return {
             name: '',
             description: '',
-            priority: 10
+            priority: 3
         }
     }
 
@@ -103,8 +103,9 @@ export class MinistryService {
     }
 
     private _addMinistry(ministry: Ministry) {
-        const newMinistry = new Ministry(ministry.name, ministry.description, ministry.priority);
-        if (typeof newMinistry.setId === 'function') newMinistry.setId(this._getRandomId());
+        // const newMinistry = new Ministry(ministry.name, ministry.description, ministry.priority);
+        // if (typeof newMinistry.setId === 'function') newMinistry.setId(this._getRandomId());
+        ministry._id = this._getRandomId()
         return from(storageService.post(ENTITY, ministry))
             .pipe(
                 tap(newMinistry => {

@@ -4,10 +4,11 @@
     }
 
     h1 {
+        width: fit-content;
         font-size: 5rem;
         line-height: 8rem;
-        margin-top: 10%;
-        width: 80%;
+        margin-left: 2rem;
+        margin-top: 8rem;
     }
 
     button {
@@ -16,12 +17,13 @@
         font-weight: 600;
         background-color: rgba(38, 255, 0, 0.4);
         color: rgb(56, 56, 56);
-        width: 40%;
+        width: 30%;
         min-width: 300px;
         text-align: center;
         border-radius: 10px 10rem 10rem 10px;
         padding: 2rem;
-        margin-top: 2rem;
+        margin-top: 4rem;
+        margin-left: 2rem;
         cursor: pointer;
 
         &:hover {

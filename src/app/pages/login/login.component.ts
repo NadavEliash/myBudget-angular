@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit{
   }
 
   onLogin() {
-    this.subscription = this.userService.getUser(this.userName).subscribe()
+    this.subscription = this.userService.setUser(this.userName).subscribe()
     this.router.navigate(['/ministry'])
   }
 }

@@ -18,18 +18,51 @@ export class SpendComponent implements OnInit {
 
   subscription!: Subscription
   user!: User | null
+  amount: number = 0
 
   ngOnInit(): void {
     this.subscription = this.userService.loggedinUser$.subscribe(
-      user => this.user = user
+      user => {
+        this.user = user
+        const action = user.spend.find(action => action.to === this.ministry.name)
+        this.amount = action? action.amount : 0
+      }
     )
   }
 
-  onSpend(ministry: string, spend: number) {
+  onSpend(ministryId: string, ministry: string, amount: number) {
     if (this.user) {
-      this.user.balance -= spend
-      this.user.spend.push({to: ministry, amount: spend})
+      if (this.user.balance < amount) return
+      if (this.user.spend.some(action => action.to === ministry)) {
+        this.updateSpend(ministryId, ministry, amount)
+      } else {
+        this.addAction(ministryId, ministry, amount)
+      }
+    }
+  }
+
+  updateSpend(ministryId: string, ministry: string, amount: number) {
+    if (this.user) {
+      this.clearAction(ministry)
+      this.addAction(ministryId, ministry, amount)
+    }
+  }
+
+  addAction(ministryId: string, ministry: string, amount: number) {
+    if (this.user) {
+      this.amount = amount
+      this.user.balance -= amount
+      this.user.spend.push({ toId: ministryId, to: ministry, amount })
       this.userService.updateSpending(this.user)
+    }
+  }
+
+  clearAction(ministry: string) {
+    if (this.user) {
+      const idx = this.user.spend.findIndex(action => action.to === ministry)
+      this.user.balance += this.user.spend[idx].amount
+      this.user.spend.splice(idx, 1)
+      this.amount = 0
     }
   }
 }

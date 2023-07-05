@@ -3,9 +3,9 @@
         <a class="logo" routerLink="/">
             <img src="https://www.svgrepo.com/show/426317/money-bag-dollar.svg" alt="Home">
         </a>
-        <div *ngIf="user?.name" class="balance">Hi {{user?.name}}! You have ${{user?.balance}} billion to spend</div>
+        <div *ngIf="user?.name" class="balance">{{user?.name}}, You have ${{user?.balance}} billion to spend</div>
         <a routerLink="/ministry">Interests</a>
         <a routerLink="/statistics">Charts</a>
-        <a routerLink="/login">Join</a>
+        <button (click)="onLoginLogout()">{{user?.name ? 'Logout' : 'Join'}}</button>
     </nav>
 </section>

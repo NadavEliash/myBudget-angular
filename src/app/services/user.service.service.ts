@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../models/user.model';
 
 const ENTITY = 'users'
+const LOGGEDIN_USER = 'LoggedinUser'
 
 @Injectable({
   providedIn: 'root'
@@ -12,34 +13,43 @@ const ENTITY = 'users'
 
 export class UserService {
 
-  private _loggedinUser$ = new BehaviorSubject<User>({ name: '', balance: 100, spend: [{}] })
+  private _loggedinUser$ = new BehaviorSubject<User>(this._getEmptyUser())
   public loggedinUser$ = this._loggedinUser$.asObservable()
 
-  public getUser(userName: string) {
+  public getLoggedinUser() {
+    const userName = sessionStorage.getItem(LOGGEDIN_USER)
+    if (!userName) return null
+    return this.setUser(userName).subscribe()
+  }
+
+  public setUser(userName: string) {
     return from(this._query())
       .pipe(
         tap(users => {
           let user = users.find(user => user.name === userName)
           if (!user) {
-            user = {
-              name: userName,
-              balance: 100,
-              spend: [{}]
-            }
+            user = this._getEmptyUser()
+            user.name = userName
             this._post(user)
           }
+          this._saveLoggedinUser(userName)
           this._loggedinUser$.next(user)
         })
       )
   }
 
+  public logOut() {
+    sessionStorage.setItem(LOGGEDIN_USER, '')
+    this._loggedinUser$.next(this._getEmptyUser())
+  }
+
   public updateSpending(user: User) {
     return from(this._put(user))
-    .pipe(
-      tap(user => {
-        this._loggedinUser$.next(user)
-      })
-    )
+      .pipe(
+        tap(user => {
+          this._loggedinUser$.next(user)
+        })
+      )
   }
 
   private async _query(delay = 10): Promise<User[]> {
@@ -61,7 +71,7 @@ export class UserService {
     let users = await this._query()
     const idx = users.findIndex(user => user.name === updatedUser.name)
     users.splice(idx, 1)
-    users.push(updatedUser)    
+    users.push(updatedUser)
     this._save(users)
     return updatedUser
   }
@@ -70,8 +80,24 @@ export class UserService {
     localStorage.setItem(ENTITY, JSON.stringify(users))
   }
 
+  private _saveLoggedinUser(userName: string) {
+    sessionStorage.setItem(LOGGEDIN_USER, userName)
+  }
+
   private _handleError(err: HttpErrorResponse) {
     console.log('error in service:', err)
     return throwError(() => err)
+  }
+
+  private _getEmptyUser(): User {
+    return {
+      name: '',
+      balance: 100,
+      spend: [{
+        to: '',
+        toId: '',
+        amount: 0
+      }]
+    }
   }
 }

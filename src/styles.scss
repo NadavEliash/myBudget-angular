@@ -18,8 +18,12 @@ body {
 
 .main-content {
     min-height: 90vh;
-    margin-inline: 60px;
+    margin-inline: 80px;
     padding-top: 2rem;
+
+    @media(max-width: 600px) {
+        margin-inline: 20px;
+    }
 }
 
 h1,

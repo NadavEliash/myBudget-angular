@@ -4,7 +4,14 @@ export class User {
         public _id?: string,
         public name: string = '',
         public balance: number = 100,
-        public spend: [{}] = [{}]
+        public spend: [{
+            to: string
+            toId: string
+            amount: number
+        }] = [{
+            to: '',
+            toId: '',
+            amount: 0
+        }]
     ) { }
 }
-

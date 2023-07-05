@@ -45,6 +45,9 @@
 }
 
 .action {
+    justify-self: center;
+    display: flex;
+    align-items: center;
 
     button {
         margin-inline: 5px;
@@ -57,7 +60,7 @@
 
     img {
         width: 25px;
-        filter: invert(.6);
+        filter: invert(.8);
 
         &:hover {
             scale: 1.1;

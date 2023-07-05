@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Ministry } from 'src/app/models/ministry.model';
+import { User } from 'src/app/models/user.model';
 import { MinistryService } from 'src/app/services/ministry.service';
+import { UserService } from 'src/app/services/user.service.service';
 
 @Component({
   selector: 'ministry-index',
@@ -10,12 +12,14 @@ import { MinistryService } from 'src/app/services/ministry.service';
 })
 export class MinistryIndexComponent implements OnInit, OnDestroy {
 
-  constructor(private ministryService: MinistryService) { }
-  ministries: Ministry[] | null = null
+  constructor(private ministryService: MinistryService, private userService: UserService) { }
   ministries$!: Observable<Ministry[]>
   subscription!: Subscription
 
+  loggedinUser: User | null = null
+
   ngOnInit(): void {
+    this.userService.getLoggedinUser()
     this.subscription = this.ministryService.loadMinistries().subscribe()
     this.ministries$ = this.ministryService.ministries$
   }

@@ -3,7 +3,7 @@ export class Ministry {
     constructor(
         public _id?: string,
         public name: string = '',
-        public priority: number = 10,
+        public priority: number = 3,
         public description: string = '',
         public imgUrl?: string
     ) { }
