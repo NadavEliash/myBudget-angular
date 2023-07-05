@@ -4,13 +4,13 @@ import { MinistryIndexComponent } from './pages/ministry-index/ministry-index.co
 import { MinistryDetailsComponent } from './pages/ministry-details/ministry-details.component';
 import { MinistryEditComponent } from './pages/ministry-edit/ministry-edit.component';
 import { HomeComponent } from './pages/home/home.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { ChartsComponent } from './pages/charts/charts.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    redirectTo: '', 
+    path: '',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
@@ -38,8 +38,8 @@ const routes: Routes = [
     component: MinistryEditComponent
   },
   {
-    path: 'statistics',
-    component: StatisticsComponent
+    path: 'charts',
+    component: ChartsComponent
   }
 ]
 

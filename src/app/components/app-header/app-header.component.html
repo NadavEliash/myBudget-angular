@@ -1,11 +1,11 @@
 <section class="app-header">
     <nav class="navbar">
         <a class="logo" routerLink="/">
-            <img src="https://www.svgrepo.com/show/426317/money-bag-dollar.svg" alt="Home">
+            <img src="https://www.svgrepo.com/show/486066/money-yewushuju-line.svg" alt="Home">
         </a>
-        <div *ngIf="user?.name" class="balance">{{user?.name}}, You have ${{user?.balance}} billion to spend</div>
-        <a routerLink="/ministry">Interests</a>
-        <a routerLink="/statistics">Charts</a>
+        <div *ngIf="user?.name" class="balance">Welcome {{user?.name}}! You have ${{user?.balance}} billion to spend</div>
+        <a routerLink="/ministry">Budget</a>
+        <!-- <a routerLink="/statistics">Charts</a> -->
         <button (click)="onLoginLogout()">{{user?.name ? 'Logout' : 'Join'}}</button>
     </nav>
 </section>

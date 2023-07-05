@@ -1,5 +1,5 @@
 .filter {
-    
+
     position: relative;
     display: flex;
     flex-direction: row;
@@ -40,7 +40,7 @@
     .sortBy {
         position: relative;
         cursor: pointer;
-        
+
         .arow-down {
             width: 15px;
             translate: 0 20%;
@@ -50,18 +50,19 @@
 
     .sort {
         position: absolute;
-        right: -5rem;
-        top: -.4rem;
+        right: 0;
+        top: 1;
         opacity: 1;
         border-radius: 1rem;
-        padding-inline: 1.3rem;
+        background-color: rgba(255, 255, 255, .6);
+        padding-inline: .5rem;
         line-height: 2.5rem;
         z-index: 10;
         scale: 1 1;
         transition: .4s;
-        cursor: pointer;
-        text-align: center;
+        font-size: 1.1rem;
         font-weight: 600;
+        cursor: pointer;
 
         &.hide {
             scale: 1 0;

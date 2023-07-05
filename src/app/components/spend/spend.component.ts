@@ -29,7 +29,7 @@ export class SpendComponent implements OnInit {
       }
     )
   }
-
+  
   onSpend(ministryId: string, ministry: string, amount: number) {
     if (this.user) {
       if (this.user.balance < amount) return
@@ -63,6 +63,7 @@ export class SpendComponent implements OnInit {
       this.user.balance += this.user.spend[idx].amount
       this.user.spend.splice(idx, 1)
       this.amount = 0
+      this.userService.updateSpending(this.user)
     }
   }
 }

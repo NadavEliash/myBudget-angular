@@ -1,13 +1,30 @@
 .home-page {
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://img.freepik.com/free-vector/stock-graph-market-finance-chart-growth-business-blue-bond-data-online-bank_333792-77.jpg?w=1380&t=st=1688596071~exp=1688596671~hmac=7b310ce48bead8962746306ad6f07140863d2d15b6481c7939a12c13a96d8d88');
+        background-size: cover;
+        opacity: .3;
+        z-index: -10;
+    }
+
     .top {
         border: 1px solid rgba(255, 255, 255, 0);
     }
 
     h1 {
         width: fit-content;
-        font-size: 5rem;
+        font-size: 6rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
         line-height: 8rem;
-        margin-left: 2rem;
+        margin-left: 12rem;
         margin-top: 8rem;
     }
 
@@ -15,15 +32,15 @@
         border: 0;
         font-size: 2.5rem;
         font-weight: 600;
-        background-color: rgba(38, 255, 0, 0.4);
+        background-color: rgba(0, 174, 255, 0.4);
         color: rgb(56, 56, 56);
-        width: 30%;
+        width: 25%;
         min-width: 300px;
         text-align: center;
-        border-radius: 10px 10rem 10rem 10px;
+        border-radius: 20px 10rem 10rem 20px;
         padding: 2rem;
         margin-top: 4rem;
-        margin-left: 2rem;
+        margin-left: 12rem;
         cursor: pointer;
 
         &:hover {

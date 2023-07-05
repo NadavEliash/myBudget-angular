@@ -11,12 +11,13 @@ import { MinistryEditComponent } from './pages/ministry-edit/ministry-edit.compo
 import { MinistryFilterComponent } from './components/ministry-filter/ministry-filter.component';
 import { MinistryListComponent } from './components/ministry-list/ministry-list.component';
 import { MinistryPreviewComponent } from './components/ministry-preview/ministry-preview.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { ChartsComponent } from './pages/charts/charts.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { SpendComponent } from './components/spend/spend.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SpendComponent } from './components/spend/spend.component';
     MinistryFilterComponent,
     MinistryListComponent,
     MinistryPreviewComponent,
-    StatisticsComponent,
+    ChartsComponent,
     AppHeaderComponent,
     AppFooterComponent,
     LoginComponent,
@@ -38,7 +39,8 @@ import { SpendComponent } from './components/spend/spend.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
