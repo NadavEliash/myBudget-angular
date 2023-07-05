@@ -10,7 +10,7 @@
         height: 100%;
         background-image: url('https://img.freepik.com/free-vector/stock-graph-market-finance-chart-growth-business-blue-bond-data-online-bank_333792-77.jpg?w=1380&t=st=1688596071~exp=1688596671~hmac=7b310ce48bead8962746306ad6f07140863d2d15b6481c7939a12c13a96d8d88');
         background-size: cover;
-        opacity: .3;
+        opacity: .2;
         z-index: -10;
     }
 
@@ -44,7 +44,7 @@
         cursor: pointer;
 
         &:hover {
-            box-shadow: 0px 0px 5px 0px rgba(17, 255, 0, 0.6);
+            box-shadow: 0px 0px 5px 0px rgba(0, 136, 255, 0.6);
             transition: .4s;
         }
     }
