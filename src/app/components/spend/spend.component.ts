@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Ministry } from 'src/app/models/ministry.model';
 import { User } from 'src/app/models/user.model';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service.service';
   styleUrls: ['./spend.component.scss']
 })
 
-export class SpendComponent implements OnInit {
+export class SpendComponent implements OnInit, OnDestroy {
   @Input() ministry!: Ministry
 
   constructor(private userService: UserService) { }
@@ -53,7 +53,7 @@ export class SpendComponent implements OnInit {
       this.amount = amount
       this.user.balance -= amount
       this.user.spend.push({ toId: ministryId, to: ministry, amount })
-      this.userService.updateSpending(this.user)
+      this.subscription = this.userService.updateSpending(this.user).subscribe(user => this.user = user)
     }
   }
 
@@ -63,7 +63,11 @@ export class SpendComponent implements OnInit {
       this.user.balance += this.user.spend[idx].amount
       this.user.spend.splice(idx, 1)
       this.amount = 0
-      this.userService.updateSpending(this.user)
+      this.subscription = this.userService.updateSpending(this.user).subscribe(user => this.user = user)
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()    
   }
 }

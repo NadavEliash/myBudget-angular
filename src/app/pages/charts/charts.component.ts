@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core'
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core'
 import { ChartOptions } from 'chart.js';
 import { ChartConfiguration } from 'chart.js'
 import { Observable, Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service.service';
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.scss']
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent implements OnInit, OnDestroy {
   
   constructor(
     private userService: UserService,
@@ -25,9 +25,14 @@ export class ChartsComponent implements OnInit {
   public pieChartDatasets = [{
     data: [0]
   }]
+  public pieChartOptions: ChartOptions<'pie'> = {
+    responsive: false,
+  }
+  public pieChartLegend = true
+  public pieChartPlugins = []
 
   ngOnInit(): void {
-    this.userService.loggedinUser$.subscribe(
+    this.subscription = this.userService.loggedinUser$.subscribe(
       user => {
       this.user = user
       this.pieChartLabels = this.user?.spend.filter(action => !!action.to).map(action => action.to)
@@ -36,21 +41,29 @@ export class ChartsComponent implements OnInit {
     })
   }
 
-  refresh() {
-    this.userService.loggedinUser$.subscribe(
-      user => {
+  // refresh() {
+  //   this.userService.loggedinUser$.subscribe(
+  //     user => {
+  //     this.user = user
+  //     this.pieChartLabels = this.user?.spend.filter(action => !!action.to).map(action => action.to)
+  //     this.pieChartDatasets[0].data = this.user?.spend.filter(action => !!action.to).map(action => action.amount)
+  //   })
+  // }
+
+  clearAll() {
+    const restartedUser = {...this.user, balance:100, spend: [{
+      to: '',
+      toId: '',
+      amount: 0
+    }]}
+    this.userService.updateSpending(restartedUser as User).subscribe(user => {
       this.user = user
-      this.pieChartLabels = this.user?.spend.filter(action => !!action.to).map(action => action.to)
-      this.pieChartDatasets[0].data = this.user?.spend.filter(action => !!action.to).map(action => action.amount)
     })
   }
-  public pieChartOptions: ChartOptions<'pie'> = {
-    responsive: false,
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()    
   }
-
-  public pieChartLegend = true
-  public pieChartPlugins = []
-
 
   // POLAR
 

@@ -1,15 +1,12 @@
 <main class="charts">
     <div *ngIf="user?.name" class="wallet">
         <img src="https://www.svgrepo.com/show/494597/wallet-banknotes.svg" alt="wallet">
-       <span class="balance">${{user?.balance}}</span> billion left</div>
-    <button (click)="refresh()" *ngIf="user?.name">Click to see your budget Live</button>    
-    <canvas 
-    baseChart [type]="'pie'" 
-    [datasets]="pieChartDatasets" 
-    [labels]="pieChartLabels" 
-    [options]="pieChartOptions"
-    [plugins]="pieChartPlugins" 
-    [legend]="pieChartLegend">
+        <span class="balance">${{user?.balance}}</span> billion left
+    </div>
+    <button class="clear-all" (click)="clearAll()" *ngIf="user?.name">Start Over</button>
+    <!-- <button (click)="refresh()" *ngIf="user?.name">Click to see your budget Live</button> -->
+    <canvas baseChart [type]="'pie'" [datasets]="pieChartDatasets" [labels]="pieChartLabels" [options]="pieChartOptions"
+        [plugins]="pieChartPlugins" [legend]="pieChartLegend">
     </canvas>
 
     <!-- <canvas baseChart
