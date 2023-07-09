@@ -1,50 +1,25 @@
 .charts {
-    position: absolute;
-    right: 30%;
-    translate: 50%;
-    top: 10vh;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding: 1rem;
+    width: max-content;
 
-    h1 {
-        font-size: 2rem;
-    }
 
-    .wallet {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-block: 1rem;
-
-        .balance {
-            font-size: 2.2rem;
-            font-weight: 900;
-        }
-
-        img {
-            width: 40px;
-            translate: 0 10%;
-            margin-right: 1rem;
-        }
-    }
-
-    button {
+    button, a {
+        margin-inline: auto;
         text-align: center;
         font-size: 1rem;
         font-family: inherit;
         font-weight: 600;
         color: inherit;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
         background-color: rgba($color: #00ff44, $alpha: 0.2);
         border-radius: 2rem;
         border: 1px solid rgba(0, 0, 0, .6);
         height: 3rem;
-        max-width: 560px;
-        min-width: 300px;
+        width: 200px;
         cursor: pointer;
-        
-        // &.clear-all {
-        //     border-radius: 2rem 8px 8px 2rem;
-        //     margin-right: 1rem;
-        // }
 
         &:hover {
             transition: .2s;
@@ -52,7 +27,17 @@
         }
     }
 
+    a {
+        margin-top: 0;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding-inline: 2rem;
+        width: max-content;
+        font-size: 1rem;
+    }
+
     canvas {
-        width: 550px;
+        width: 350px;
     }
 }

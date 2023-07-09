@@ -1,10 +1,9 @@
 .filter {
-
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
-    gap: 1rem;
     max-width: 600px;
     min-width: 320px;
 
@@ -15,7 +14,6 @@
 
         input {
             margin-top: 1rem;
-            margin-left: 1rem;
             height: 3rem;
             width: 95%;
             border-radius: 2rem;
@@ -37,9 +35,34 @@
         }
     }
 
-    .sortBy {
-        position: relative;
+    .add-ministry {
+        background-color: rgba($color: #00ff44, $alpha: 0.2);
+        border-radius: 2rem;
+        padding: .8rem;
+        padding-top: .6rem;
+        margin-block: 1rem;
+        height: 3rem;
+        padding-inline: 2rem;
         cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        font-weight: 700;
+        text-align: center;
+
+        &:hover {
+            transition: .2s;
+            box-shadow: 0px 0px 5px 0px rgba(8, 8, 8, 0.4);
+        }
+    }
+
+    .sortBy {
+        margin-inline-start: 1.2rem;
+        cursor: pointer;
+        text-transform: capitalize;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+        align-items: center;
 
         .arow-down {
             width: 15px;
@@ -48,28 +71,28 @@
     }
 
 
-    .sort {
-        position: absolute;
-        right: 0;
-        top: 1;
-        opacity: 1;
-        border-radius: .5rem;
-        background-color: rgba(255, 255, 255, .5);
-        padding-inline: .5rem;
-        line-height: 2.5rem;
-        z-index: 10;
-        scale: 1 1;
-        transition: .4s;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
+    // .sort {
+    //     position: absolute;
+    //     right: .5rem;
+    //     top:1.5rem;
+    //     opacity: 1;
+    //     border-radius: .5rem;
+    //     background-color: rgba(255, 255, 255, .5);
+    //     padding-inline: .5rem;
+    //     line-height: 2.5rem;
+    //     z-index: 10;
+    //     scale: 1 1;
+    //     transition: .4s;
+    //     font-size: 1.1rem;
+    //     font-weight: 600;
+    //     cursor: pointer;
 
-        &.hide {
-            scale: 1 0;
-            transform-origin: top;
-            top: 0;
-            opacity: 0;
-            pointer-events: none;
-        }
-    }
+    //     &.hide {
+    //         scale: 1 0;
+    //         transform-origin: top;
+    //         top: 0;
+    //         opacity: 0;
+    //         pointer-events: none;
+    //     }
+    // }
 }

@@ -20,10 +20,11 @@ export class ChartsComponent implements OnInit, OnDestroy {
 
   subscription!: Subscription
   user!: User | null
+  title: string = this.user? 'Your Budget:' : 'Join first and start budget!'
   
   public pieChartLabels = ['']
   public pieChartDatasets = [{
-    data: [0]
+    data: [1]
   }]
   public pieChartOptions: ChartOptions<'pie'> = {
     responsive: false,
@@ -36,7 +37,8 @@ export class ChartsComponent implements OnInit, OnDestroy {
       user => {
       this.user = user
       this.pieChartLabels = this.user?.spend.filter(action => !!action.to).map(action => action.to)
-      this.pieChartDatasets[0].data = this.user?.spend.filter(action => !!action.to).map(action => action.amount)
+      const chartDatasets = this.user?.spend.filter(action => !!action.to).map(action => action.amount)
+      this.pieChartDatasets[0].data = chartDatasets.length? chartDatasets : [1]
       // this.changeDetectorRef.detectChanges()
     })
   }

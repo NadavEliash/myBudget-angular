@@ -1,23 +1,53 @@
-.add-ministry {
-    display: block;
-    background-color: rgba($color: #00ff44, $alpha: 0.2);
-    border-radius: 2rem;
-    padding: .8rem;
-    padding-top: .6rem;
-    margin-inline: 1rem;
-    margin-block: 1rem;
-    height: 3rem;
-    max-width: 560px;
-    min-width: 300px;
-    padding-inline: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    font-weight: 700;
-    text-align: center;
+.ministry-index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    height: 90vh;
+    justify-items: center;
+}
 
-    &:hover {
-        transition: .2s;
-        box-shadow: 0px 0px 5px 0px rgba(8, 8, 8, 0.4);
+.ministry-title {
+    grid-column: 1;
+    border-radius: 1rem;
+    padding-inline: 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+
+    &.invisible {
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0);
     }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .wallet {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-block: 1rem;
+
+        .balance {
+            font-size: 2.2rem;
+            font-weight: 900;
+        }
+
+        img {
+            width: 40px;
+            translate: 0 10%;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.ministries {
+    grid-row: 2;
+}
+
+Charts {
+    grid-row: 2;
 }

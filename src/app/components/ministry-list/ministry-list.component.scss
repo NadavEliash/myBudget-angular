@@ -1,6 +1,6 @@
 .ministry-list-ul {
     padding: 0;
-    height: 70vh;
+    height: 40vh;
     max-width: 600px;
     min-width: 320px;
     overflow-y: scroll;
@@ -30,7 +30,7 @@
     padding: 1rem;
     margin-inline: auto;
     display: grid;
-    grid-template-columns: 3fr 1.5fr 1fr;
+    grid-template-columns: 3fr 1.5fr minmax(120px, 1fr);
     align-items: center;
     cursor: pointer;
 

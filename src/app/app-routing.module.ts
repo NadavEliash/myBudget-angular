@@ -23,19 +23,21 @@ const routes: Routes = [
   },
   {
     path: 'ministry',
-    component: MinistryIndexComponent
-  },
-  {
-    path: 'ministry/:id',
-    component: MinistryDetailsComponent
-  },
-  {
-    path: 'edit',
-    component: MinistryEditComponent
-  },
-  {
-    path: 'edit/:id',
-    component: MinistryEditComponent
+    component: MinistryIndexComponent,
+    children: [
+      {
+        path: 'edit',
+        component: MinistryEditComponent
+      },
+      {
+        path: 'edit/:id',
+        component: MinistryEditComponent
+      },
+      {
+        path: ':id',
+        component: MinistryDetailsComponent
+      },
+    ]
   },
   {
     path: 'charts',

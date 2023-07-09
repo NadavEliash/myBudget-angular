@@ -10,16 +10,23 @@ import { UserService } from 'src/app/services/user.service.service';
   templateUrl: './ministry-index.component.html',
   styleUrls: ['./ministry-index.component.scss']
 })
+
 export class MinistryIndexComponent implements OnInit, OnDestroy {
 
   constructor(private ministryService: MinistryService, private userService: UserService) { }
   ministries$!: Observable<Ministry[]>
   subscription!: Subscription
 
-  loggedinUser: User | null = null
+  user: User | null = null
 
   ngOnInit(): void {
     this.userService.getLoggedinUser()
+    this.userService.loggedinUser$.subscribe(
+      user => {
+        this.user = user
+      }
+    )
+
     this.subscription = this.ministryService.loadMinistries().subscribe()
     this.ministries$ = this.ministryService.ministries$
   }

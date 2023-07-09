@@ -9,18 +9,24 @@
     form {
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
     }
 
     input {
+        padding: 0;
         border: 1px solid rgba(0, 0, 0, .5);
-        border-radius: 1rem 0 0 1rem;
         background-color: rgba(255, 255, 255, .8);
-        text-indent: 4px;
-        width: 40%;
-        padding-bottom: 5px;
-        padding-top: 6px;
+        width: 2rem;
         text-align: center;
+        font-weight: 600;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 3rem;
+        height: 50px;
+        caret-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -30,13 +36,32 @@
     }
 
     button {
+        padding: 0;
         border: 1px solid rgba(0, 0, 0, .5);
-        line-height: 1.5rem;
         background-color: rgba($color: #00ff44, $alpha: 0.2);
+        height: 50px;
         border-left: 0;
+        width: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 30px;
+        }
+
+        &.minus-button {
+            border-left: 1px solid rgba(0, 0, 0, .5);
+            border-radius: 2rem 0 0 2rem;
+            border-right: 0;
+        }
 
         &.clear-button {
-            border-radius: 0 1rem 1rem 0;
+            border-radius: 0 2rem 2rem 0;
+            img {
+                width: 25px;
+            }
         }
 
         &:hover {

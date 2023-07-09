@@ -2,7 +2,7 @@
     <li class="ministry-list" *ngFor="let ministry of ministries">
         <ministry-preview routerLink="/ministry/{{ministry._id}}" [ministry]="ministry" />
         <div class="action">
-            <button routerLink="/edit/{{ministry._id}}">
+            <button routerLink="edit/{{ministry._id}}">
                 <img src="https://www.svgrepo.com/show/510965/edit-pencil-01.svg" alt="edit">
             </button>
             <button (click)="onRemoveMinistry($event, ministry._id)">

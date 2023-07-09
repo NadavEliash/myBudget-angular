@@ -1,12 +1,10 @@
 <section class="filter">
     <form>
         <input [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilter()" type="text" name="term" id="term"
-            placeholder="Search">
+            placeholder="Search for Interests">
     </form>
-    <div class="sortBy" (click)="toggleSort()">Sort By <img class="arow-down" src="https://www.svgrepo.com/show/509899/down-chevron.svg" alt="down">
-        <div [class]="isOnSort? 'sort' : 'sort hide'">
-            <div (click)="setSortBy('priority')">Priority</div>
-            <div (click)="setSortBy('name')">Name</div>
-        </div>
+    <a class="add-ministry" routerLink="edit">Add a New Interest</a>
+    <div class="sortBy" (click)="toggleSort()">Sort By: <span>{{sortBy.term}}</span> <img class="arow-down"
+            src="https://www.svgrepo.com/show/509899/down-chevron.svg" alt="down">
     </div>
 </section>

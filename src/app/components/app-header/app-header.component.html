@@ -3,7 +3,7 @@
         <a class="logo" routerLink="/">
             <img src="https://www.svgrepo.com/show/486066/money-yewushuju-line.svg" alt="Home">
         </a>
-        <div *ngIf="user?.name" class="balance">Welcome {{user?.name}}! You have ${{user?.balance}} billion to spend</div>
+        <!-- <div *ngIf="user?.name" class="balance">Welcome {{user?.name}}! You have ${{user?.balance}} billion to spend</div> -->
         <a routerLink="/ministry">Budget</a>
         <!-- <a routerLink="/statistics">Charts</a> -->
         <button (click)="onLoginLogout()">{{user?.name ? 'Logout' : 'Join'}}</button>

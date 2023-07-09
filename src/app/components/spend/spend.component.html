@@ -1,7 +1,14 @@
 <section class="spend-box" *ngIf="user?.name">
     <form (ngSubmit)="onSpend(ministry._id!, ministry.name, +spend.value)">
-        $<input [(ngModel)]="amount" #spend type="number" name="amount">
-        <button>add</button>
+        <button (click)="onPlusMinus($event, ministry._id!, ministry.name, -1)" class="minus-button">
+            <img src="https://www.svgrepo.com/show/507782/minus.svg" alt="-">
+        </button>
+        <input [(ngModel)]="amount" #spend type="number" name="amount">
+        <button (click)="onPlusMinus($event, ministry._id!, ministry.name, +1)">
+            <img src="https://www.svgrepo.com/show/507823/plus.svg" alt="+">
+        </button>
     </form>
-    <button (click)="clearAction(ministry.name)" class="clear-button">x</button>
+    <button (click)="clearAction(ministry.name)" class="clear-button">
+        <img src="https://www.svgrepo.com/show/502578/clear.svg" alt="x">
+    </button>
 </section>

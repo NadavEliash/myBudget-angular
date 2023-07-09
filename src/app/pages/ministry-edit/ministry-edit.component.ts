@@ -9,6 +9,7 @@ import { MinistryService } from 'src/app/services/ministry.service';
   templateUrl: './ministry-edit.component.html',
   styleUrls: ['./ministry-edit.component.scss']
 })
+
 export class MinistryEditComponent implements OnInit {
 
   constructor(

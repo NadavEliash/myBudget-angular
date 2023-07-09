@@ -24,7 +24,7 @@ export class MinistryDetailsComponent implements OnInit {
     this.route.params
       .pipe(
         map(params => params['id']),
-        filter(id => !!id),
+        filter(id => id),
         switchMap(id => this.minisrtyService.getMinistryById(id))
       )
       .subscribe(ministry => this.ministry = ministry)
