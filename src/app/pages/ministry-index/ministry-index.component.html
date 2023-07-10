@@ -1,16 +1,20 @@
 <section class="ministry-index main-content">
-        <div [ngClass]="{'invisible': !user?.name, 'ministry-title': user}">
-            <div *ngIf="user?.name" class="wallet">
+    <div [ngClass]="{'invisible': !user?.name, 'ministry-title': user}">
+        <div *ngIf="user?.name">
+            <div class="wallet">
                 <img src="https://www.svgrepo.com/show/494597/wallet-banknotes.svg" alt="wallet">
                 <span class="balance">${{user?.balance}}</span> billion left
             </div>
-            <h2 *ngIf="user?.name">{{user?.name}}, Select interests and start budget >></h2>
-            <h1 *ngIf="user?.name">Spend the State's money carefully...</h1>
+            <h2>{{user?.name}}, Select interests and start budget >></h2>
+            <h1>Spend the State's money carefully...</h1>
         </div>
-        <div class="ministries">
-            <ministry-filter />
-            <ministry-list [ministries]="ministries$ | async" (removeMinistry)="onRemoveMinistry($event)" />
-        </div>
+        <h1 *ngIf="!user?.name">Welcome!</h1>
+        <a *ngIf="!user?.name" routerLink="/login">Join and get $100 billion budget to spend</a>
+    </div>
+    <div class="ministries">
+        <ministry-filter />
+        <ministry-list [ministries]="ministries$ | async" (removeMinistry)="onRemoveMinistry($event)" />
+    </div>
     <Charts />
     <router-outlet></router-outlet>
 </section>

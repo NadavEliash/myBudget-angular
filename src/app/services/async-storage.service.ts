@@ -28,7 +28,7 @@ async function get(entityType: string, entityId: string): Promise<Entity> {
 
 async function post(entityType: string, newEntity: Entity): Promise<Entity> {
     const entities = await query(entityType)
-    entities.push(newEntity)
+    entities.unshift(newEntity)
     _save(entityType, entities)
     return newEntity
 }

@@ -21,8 +21,11 @@ body {
     margin-inline: 120px;
     padding-top: 2rem;
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1400px) {
         margin-inline: 60px;
+    }
+    @media(max-width: 1200px) {
+        margin-inline: 20px;
     }
 }
 
@@ -52,6 +55,7 @@ input {
     left: 50%;
     translate: -50% -50%;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
+    z-index: 20;
 
     .ministry-img,
     .user-img {
@@ -72,28 +76,6 @@ input {
         width: 80%;
         margin-inline: auto;
     }
-
-    .ministry-info,
-    .user-info {
-        width: 80%;
-        margin-inline: auto;
-        font-size: 1.3rem;
-        margin-block: 10px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding-inline: 2rem;
-        padding-block: 1rem;
-        background-color: rgba(255, 255, 255, 0.02);
-        border-radius: 3rem;
-
-        img {
-            width: 35px;
-            filter: invert(.8);
-        }
-    }
-
 
     a,
     button {
@@ -182,5 +164,14 @@ input {
         font-weight: 600;
         background-color: rgba(0, 0, 0, 0.1);
     }
+}
 
+.background-clicker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }

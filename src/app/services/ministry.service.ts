@@ -110,7 +110,7 @@ export class MinistryService {
             .pipe(
                 tap(newMinistry => {
                     const ministries = this._ministries$.value
-                    this._ministries$.next([...ministries, newMinistry])
+                    this._ministries$.next([newMinistry, ...ministries])
                 }),
                 retry(1),
                 catchError(this._handleError)

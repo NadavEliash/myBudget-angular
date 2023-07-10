@@ -1,11 +1,12 @@
 <main class="charts">
     <a *ngIf="!user?.name" routerLink="/login">Join first and start budget!</a>
-    <h2 *ngIf="user?.name">Your Budget:</h2>
-    <canvas baseChart [type]="'pie'" [datasets]="pieChartDatasets" [labels]="pieChartLabels" [options]="pieChartOptions"
-        [plugins]="pieChartPlugins" [legend]="pieChartLegend">
-    </canvas>
-    <button class="clear-all" (click)="clearAll()" *ngIf="user?.name">Start Over</button>
-
+    <div *ngIf="user?.name">
+        <h2>Your Budget:</h2>
+        <canvas baseChart [type]="'pie'" [datasets]="pieChartDatasets" [labels]="pieChartLabels"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+        <button class="clear-all" (click)="clearAll()" *ngIf="user?.name">Start Over</button>
+    </div>
     <!-- <canvas baseChart
         [datasets]="polarAreaChartDatasets"
         [labels]="polarAreaChartLabels"
