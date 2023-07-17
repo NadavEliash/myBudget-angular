@@ -38,7 +38,7 @@
     display: grid;
     grid-template-columns: 3fr 1.5fr minmax(120px, 1fr);
     align-items: center;
-    cursor: pointer;
+    // cursor: pointer;
 
     &:first-child {
         margin-top: 6px;
