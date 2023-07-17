@@ -1,0 +1,13 @@
+.error-message {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 9.4rem;
+    text-align: center;
+    background-color: rgba(0,0,0,1);
+    color: white;
+}
+
+#priority {
+    caret-color: transparent;
+}

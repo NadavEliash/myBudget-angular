@@ -10,9 +10,15 @@ export class MinistryListComponent {
   @Input() ministries!: Ministry[] | null
   @Output() removeMinistry = new EventEmitter<string>()
 
+  showMsg = {ministryToMsg: ''}
+
+  onShowMsg(ministry: string) {
+    this.showMsg = {ministryToMsg: ministry}
+  }
 
   onRemoveMinistry(event: Event, ministryId: string | undefined) {
     event.stopPropagation()
+    this.showMsg = {ministryToMsg: ''}
     this.removeMinistry.emit(ministryId)
   }
 }

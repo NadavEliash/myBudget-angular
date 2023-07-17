@@ -5,57 +5,96 @@
     height: 90vh;
     justify-items: center;
     overflow: hidden;
-}
 
-.ministry-title {
-    grid-column: 1;
-    border-radius: 1rem;
-    padding-inline: 2rem;
-    text-align: center;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
+    .ministry-title {
+        width: 90%;
+        grid-column: 1;
+        border-radius: 1rem;
+        padding-inline: 2rem;
+        text-align: center;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
 
-    &.invisible {
-        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0);
-    }
-
-    a{
-        text-decoration: none;
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: inherit;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    .wallet {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-block: 1rem;
-
-        .balance {
-            font-size: 2.2rem;
-            font-weight: 900;
+        &.invisible {
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0);
         }
 
-        img {
-            width: 40px;
-            translate: 0 10%;
-            margin-right: 1rem;
+        a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: inherit;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            text-transform: capitalize;
+        }
+
+        .wallet {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-block: 1rem;
+
+            .balance {
+                font-size: 2rem;
+                font-weight: 900;
+            }
+
+            img {
+                width: 40px;
+                translate: 0 10%;
+                margin-right: 1rem;
+            }
         }
     }
-}
 
-.ministries {
-    grid-row: 2;
-}
+    .ministries {
+        grid-row: 2;
+    }
 
-Charts {
-    grid-row: 2;
+    Charts {
+        grid-row: 2;
+    }
+
+    @media(max-width: 600px) {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+
+        .ministry-title {
+            margin-top: .5rem;
+            width: 95%;
+            margin-inline: auto;
+            padding: .5rem;
+
+            h1,
+            h2,
+            .wallet {
+                font-size: 1rem;
+                margin-block: .75rem;
+            }
+
+            .wallet {
+                font-size: 1.2rem;
+                margin-top: 0;
+
+                img {
+                    translate: 0 20%;
+                }
+
+                span.balance {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+    }
 }

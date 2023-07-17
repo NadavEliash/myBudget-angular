@@ -16,11 +16,10 @@ export class MinistryFilterComponent implements OnInit {
   }
 
   sortBy: Filter = {
-    term: 'name'
+    term: ''
   }
 
   ngOnInit(): void {
-    this.filterBy = { term: '' }
     this.onSetFilter()
   }
 
@@ -28,8 +27,8 @@ export class MinistryFilterComponent implements OnInit {
     this.ministryService.setFilter(this.filterBy)
   }
 
-  toggleSort() {
-    this.sortBy.term = this.sortBy.term === 'name' ? 'priority' : 'name'
+  onSetSort() {
     this.ministryService.setSort(this.sortBy)
+    this.sortBy.term = this.sortBy.term === 'name' ? 'priority' : 'name'
   }
 }

@@ -3,8 +3,8 @@
         <input [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilter()" type="text" name="term" id="term"
             placeholder="Search for Interests">
     </form>
-    <a class="add-ministry" routerLink="edit">Add a New Interest</a>
-    <div class="sortBy" (click)="toggleSort()">Sort By: <span>{{sortBy.term}}</span> <img class="arow-down"
+    <a class="add-ministry" routerLink="edit">Add<span> a New Interest</span></a>
+    <div class="sortBy" (click)="onSetSort()">Sort By: <span>{{sortBy.term === 'name' ? 'priority' : 'name'}}</span> <img class="arow-down"
             src="https://www.svgrepo.com/show/509899/down-chevron.svg" alt="down">
     </div>
 </section>

@@ -41,8 +41,9 @@
         padding: .8rem;
         padding-top: .6rem;
         margin-block: 1rem;
+        margin-left: 1rem;
         height: 3rem;
-        padding-inline: 2rem;
+        padding-inline: 1rem;
         cursor: pointer;
         text-decoration: none;
         color: inherit;
@@ -72,6 +73,29 @@
         }
     }
 
+    @media(max-width: 600px) {
+        min-width: 260px;
+
+        form {
+            margin-block: 4px;
+
+            input {
+                margin: 0;
+            }
+        }
+
+        .add-ministry {
+            margin-block: 4px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .sortBy {
+            display: flex;
+        }
+    }
 
     // .sort {
     //     position: absolute;

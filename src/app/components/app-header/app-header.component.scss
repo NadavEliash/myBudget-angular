@@ -1,7 +1,11 @@
 .app-header {
-    margin-inline: 80px;
+    margin-inline: 120px;
 
-    @media(max-width: 600px) {
+    @media(max-width: 1400px) {
+        margin-inline: 60px;
+    }
+
+    @media(max-width: 1200px) {
         margin-inline: 20px;
     }
 }
@@ -42,6 +46,7 @@ nav {
     .logo {
         cursor: pointer;
         flex-grow: 1;
+        z-index: 110;
 
         img {
             width: 40px;
@@ -69,11 +74,17 @@ nav {
         &:first-child {
             text-align: start;
         }
+    }
 
-
+    .budget {
+        @media(max-width: 600px) {
+            display: none;
+        }
     }
 
     button {
+        background-color: rgb(227, 249, 255);
+        z-index: 30;
         border: 0;
         margin: 0;
         padding: 0;
@@ -82,6 +93,27 @@ nav {
         font-family: inherit;
         color: rgb(61, 61, 61);
         cursor: pointer;
+        z-index: 110;
+
+        @media(max-width: 600px) {
+            translate: 0 20%;
+            font-weight: 600;
+            color: rgb(16, 154, 16);
+        }
+    }
+
+    .mobile-background {
+        display: none;
+        
+        @media(max-width: 600px) {
+            position: fixed;
+            left: 0;
+            display: block;
+            background-color: rgb(227, 249, 255);
+            height: 4rem;
+            width: 100%;
+            z-index: 100;
+        }
     }
 
     .responsive-navbar {

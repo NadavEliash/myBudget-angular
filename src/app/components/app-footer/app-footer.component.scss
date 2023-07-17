@@ -10,7 +10,12 @@
     font-family: monospace;
 
     .angular {
+        display: inline;
         width: 35px;
+    }
+
+    .mobile-addition {
+        display: none;
     }
 
     .social {
@@ -23,9 +28,38 @@
             filter: invert(.4);
             margin-top: 8px;
 
-            &:hover{
+            &:hover {
                 filter: invert(0);
                 transition: .4s;
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    .app-footer {
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        .made-with {
+            display: none;
+        }
+
+        .angular {
+            display: none;
+        }
+
+        .mobile-addition {
+            display: inline;
+        }
+
+        .social {
+            img {
+                width: 20px;
+                filter: invert(.4);
+                margin-top: 4px;
             }
         }
     }

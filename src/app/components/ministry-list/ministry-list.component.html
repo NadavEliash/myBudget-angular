@@ -5,10 +5,17 @@
             <button routerLink="edit/{{ministry._id}}">
                 <img src="https://www.svgrepo.com/show/510965/edit-pencil-01.svg" alt="edit">
             </button>
-            <button (click)="onRemoveMinistry($event, ministry._id)">
+            <button (click)="onShowMsg(ministry.name)">
                 <img src="https://www.svgrepo.com/show/502608/delete-2.svg" alt="delete">
             </button>
         </div>
-        <spend [ministry]="ministry"/>
+        <div *ngIf="showMsg.ministryToMsg === ministry.name" class="user-msg">
+            <button class="close-button" (click)="showMsg.ministryToMsg = ''">X</button>
+            <h1>Are you sure you want to remove <br><span>"{{ministry.name}}"</span><br>from the list?</h1>
+            <button (click)="onRemoveMinistry($event, ministry._id)">Yes. Remove it</button>
+        </div>
+        <div *ngIf="showMsg.ministryToMsg === ministry.name" class="background-clicker"
+            (click)="showMsg.ministryToMsg = ''"></div>
+        <spend [ministry]="ministry" />
     </li>
 </ul>

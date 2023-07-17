@@ -5,7 +5,10 @@
         <input [(ngModel)]="ministry.name" type="text" name="name" id="name">
 
         <label for="priority">Priority</label>
-        <input [(ngModel)]="ministry.priority" type="number" name="priority" id="priority">
+        <input [(ngModel)]="ministry.priority" type="number" name="priority" id="priority" min="1" max="4">
+        <div *ngIf="ministry.priority < 1 || ministry.priority > 4" class="error-message">
+            Invalid Number
+        </div>
 
         <label for="description">Description</label>
         <textarea class="textarea" [(ngModel)]="ministry.description" type="" name="description"

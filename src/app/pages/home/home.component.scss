@@ -24,8 +24,24 @@
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-style: italic;
         line-height: 8rem;
+        margin-top: 10rem;
         margin-left: 12rem;
-        margin-top: 8rem;
+
+        @media(max-width: 1400px) {
+            margin-left: 60px;
+        }
+
+        @media(max-width: 1200px) {
+            margin-inline: auto;
+            text-align: center;
+            font-size: 5rem;
+            line-height: 6rem;
+        }
+
+        @media(max-width: 600px) {
+            margin-top: 40%;
+            font-size: 3rem;
+        }
     }
 
     button {
@@ -40,8 +56,24 @@
         border-radius: 20px 10rem 10rem 20px;
         padding: 2rem;
         margin-top: 4rem;
-        margin-left: 12rem;
         cursor: pointer;
+        margin-left: 12rem;
+
+        @media(max-width: 1400px) {
+            margin-left: 60px;
+        }
+
+        @media(max-width: 1200px) {
+            margin-left: 50%;
+            translate: -50%;
+        }
+
+        @media(max-width: 600px) {
+            margin-top: 1rem;
+            font-size: 2rem;
+            width: max-content;
+            min-width: 100px;
+        }
 
         &:hover {
             box-shadow: 0px 0px 5px 0px rgba(0, 136, 255, 0.6);

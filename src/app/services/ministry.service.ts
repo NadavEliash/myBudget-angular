@@ -20,7 +20,7 @@ export class MinistryService {
     public filterBy$ = this._filterBy$.asObservable()
 
     private _sortBy$ = new BehaviorSubject<Filter>({ term: '' })
-    public sortBy$ = this._sortBy$.asObservable()
+    // public sortBy$ = this._sortBy$.asObservable()
 
     constructor() {
         // Handling Demo Data, fetching from storage || saving to storage 
@@ -42,9 +42,9 @@ export class MinistryService {
 
     public loadMinistries() {
         return from(storageService.query(ENTITY))
-            .pipe(
-                tap(ministries => {
-                    const filterBy = this._filterBy$.value
+        .pipe(
+            tap(ministries => {
+                const filterBy = this._filterBy$.value
                     if (filterBy && filterBy.term) {
                         ministries = this._filter(ministries, filterBy.term)
                     }
@@ -152,159 +152,89 @@ export class MinistryService {
     private _createMinistries() {
         const ministries = [
             {
-                "_id": "5a56640269f443a5d64b32ca",
-                "name": "Ministry of Defense",
-                "description": "Responsable on the army and the state's defence forces",
-                "priority": 1,
-                "imgUrl": 'https://www.svgrepo.com/show/480684/tank.svg'
-            },
-            {
                 "_id": "5a5664025f6ae9aa24a99fde",
-                "name": "National Care",
+                "name": "National Careness and Social Services",
                 "description": "Collects health insurance contributions which are transferred to the various sick funds, and National Insurance contributions, for which both employers and employees are liable",
                 "priority": 2,
                 "imgUrl": 'https://www.svgrepo.com/show/399571/i-social-services.svg'
             },
             {
+                "_id": "5a56640269f443a5d64b32ca",
+                "name": "Defense and Nation Security",
+                "description": "Responsable on the army and the state's defence forces",
+                "priority": 1,
+                "imgUrl": 'https://www.svgrepo.com/show/480684/tank.svg'
+            },
+            {
                 "_id": "5a56640252d6acddd183d319",
-                "name": "Ministry of Justice",
-                "description": "Responsable on the courts and the public persecution",
-                "priority": 3,
+                "name": "Public Order and Justice",
+                "description": "Responsable on the courts and the public persecution, Police and Emergency Agencies",
+                "priority": 1,
                 "imgUrl": 'https://www.svgrepo.com/show/429551/justice-court.svg'
             },
             {
+                "_id": "5a56640243427b8f8445231e",
+                "name": "Environment Protection",
+                "description": "Responsable for Environment protection",
+                "priority": 2,
+                "imgUrl": 'https://www.svgrepo.com/show/503806/earth.svg'
+            },
+            {
+                "_id": "5a566402abce24c6bfe4699d",
+                "name": "Public Helth and Wellness",
+                "description": "Responsable on the public hospitals, vaccination and public health centers",
+                "priority": 1,
+                "imgUrl": 'https://www.svgrepo.com/show/421941/health-injenction-medical.svg'
+            },
+            {
+                "_id": "5a5674024e427b8f8516131s",
+                "name": "Immigration Minorities",
+                "description": "Responsable for Minorities",
+                "priority": 5,
+                "imgUrl": 'https://www.svgrepo.com/show/345044/people.svg'
+            },
+            {
+                "_id": "5a566402f90ae30e97f990db",
+                "name": "Education",
+                "description": "Responsable on schools, universities",
+                "priority": 2,
+                "imgUrl": 'https://www.svgrepo.com/show/443633/education-cap.svg'
+            },
+            {
+                "_id": "5a566402e3b846c5f6aec652",
+                "name": "Culture and Sport",
+                "description": "Responsable for Culture and sports",
+                "priority": 4,
+                "imgUrl": 'https://www.svgrepo.com/show/370754/sport-football.svg'
+            },
+            {
                 "_id": "5a169102ed1cf349f0c49b4g",
-                "name": "Ministry of Construction",
+                "name": "Construction and Development",
                 "description": "Responsable for construction and buildings over the state",
                 "priority": 4,
                 "imgUrl": 'https://www.svgrepo.com/show/383161/construction-machine-crane-lift.svg'
             },
             {
                 "_id": "5a566402ed1cf349f0b47b4d",
-                "name": "Ministry of Interior",
+                "name": "Interior Affairs",
                 "description": "Responsable on the municipalities. In addition, Responsable for citizen documentation and migration",
-                "priority": 4,
+                "priority": 3,
                 "imgUrl": 'https://www.svgrepo.com/show/454758/building-city-cityscape.svg'
             },
             {
-                "_id": "5a566402abce24c6bfe4699d",
-                "name": "Ministry of Helth",
-                "description": "Responsable on the public hospitals, vaccination and public health centers",
-                "priority": 1,
-                "imgUrl": 'https://www.svgrepo.com/show/421941/health-injenction-medical.svg'
-            },
-            {
                 "_id": "5a566402a6499c1d4da9220a",
-                "name": "Ministry of Foreign Affairs",
+                "name": "Foreign Affairs",
                 "description": "Responsable on embassies and delegations around the world",
                 "priority": 4,
                 "imgUrl": 'https://www.svgrepo.com/show/480954/earth-15.svg'
             },
             {
-                "_id": "5a566402f90ae30e97f990db",
-                "name": "Ministry of Education",
-                "description": "Responsable on schools, universities",
-                "priority": 2,
-                "imgUrl": 'https://www.svgrepo.com/show/443633/education-cap.svg'
-            },
-            {
-                "_id": "5a5664027bae84ef280ffbdf",
-                "name": "Ministry of Agriculture",
-                "description": "Responsable for Agriculture",
-                "priority": 5,
-                "imgUrl": 'https://www.svgrepo.com/show/447173/grain-organic.svg'
-            },
-            {
-                "_id": "5a566402e3b846c5f6aec652",
-                "name": "Ministry of Culture",
-                "description": "Responsable for Culture",
-                "priority": 6,
-                "imgUrl": 'https://www.svgrepo.com/show/308686/literature-book-knowledge-library.svg'
-            },
-            {
                 "_id": "5a56640272c7dcdf59c3d411",
-                "name": "Ministry of Energy",
+                "name": "Energy and Infrastructures",
                 "description": "Responsable for Energy",
-                "priority": 4,
+                "priority": 3,
                 "imgUrl": 'https://www.svgrepo.com/show/479959/energy-saving-light-bulb.svg'
             },
-            {
-                "_id": "5a5664029a8dd82a6178b15f",
-                "name": "Ministry of Social Services",
-                "description": "Responsable for Social Services",
-                "priority": 2,
-                "imgUrl": 'https://www.svgrepo.com/show/247609/care-charity.svg'
-            },
-            {
-                "_id": "5a5664028c096d08eeb13a8a",
-                "name": "Ministry of Religious Services",
-                "description": "Responsable for Religious Services",
-                "priority": 6,
-                "imgUrl": 'https://www.svgrepo.com/show/235392/jewish.svg'
-            },
-            {
-                "_id": "5a5664026c53582bb9ebe9d1",
-                "name": "Ministry of National Security",
-                "description": "Responsable for National Security",
-                "priority": 2,
-                "imgUrl": 'https://www.svgrepo.com/show/480776/police-car-1.svg'
-            },
-            {
-                "_id": "5a56640298ab77236845b82b",
-                "name": "Ministry of Labor",
-                "description": "Responsable for Labor",
-                "priority": 5,
-                "imgUrl": 'https://www.svgrepo.com/show/300241/labor-man-labor.svg'
-            },
-            {
-                "_id": "5a56640208fba3e8ecb97305",
-                "name": "Ministry of Aliyah and Integration",
-                "description": "Responsable for Integration",
-                "priority": 4,
-                "imgUrl": 'https://www.svgrepo.com/show/452583/airplane.svg'
-            },
-            {
-                "_id": "5a566402abb3146207bc4ec5",
-                "name": "Ministry of Economy",
-                "description": "Responsable for Economy",
-                "priority": 3,
-                "imgUrl": 'https://www.svgrepo.com/show/444769/stats-pipes.svg'
-            },
-            {
-                "_id": "5a56640298500fead8cb1ee5",
-                "name": "Ministry of Sport",
-                "description": "Responsable for Sport",
-                "priority": 5,
-                "imgUrl": 'https://www.svgrepo.com/show/370754/sport-football.svg'
-            },
-            {
-                "_id": "5a56640243427b8f8445231e",
-                "name": "Ministry of Environment Protection",
-                "description": "Responsable for Environment",
-                "priority": 3,
-                "imgUrl": 'https://www.svgrepo.com/show/503806/earth.svg'
-            },
-            {
-                "_id": "5a5664024e427b8f8515231t",
-                "name": "Ministry of Transport",
-                "description": "Responsable for Transportation",
-                "priority": 3,
-                "imgUrl": 'https://www.svgrepo.com/show/489186/train.svg'
-            },
-            {
-                "_id": "5a5674024e427b8f8516131s",
-                "name": "Minorities Integration",
-                "description": "Responsable for Minorities",
-                "priority": 5,
-                "imgUrl": 'https://www.svgrepo.com/show/345044/people.svg'
-            },
-            {
-                "_id": "5a5664025c3abdad6f5e098c",
-                "name": "Prime Minister Office",
-                "description": "Responsable for Minister Office",
-                "priority": 2,
-                "imgUrl": 'https://www.svgrepo.com/show/367626/polis.svg'
-            }
         ];
         return ministries
     }
