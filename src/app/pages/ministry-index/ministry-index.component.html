@@ -5,8 +5,9 @@
                 <img src="https://www.svgrepo.com/show/494597/wallet-banknotes.svg" alt="wallet">
                 <span class="balance">${{user?.balance}}</span> billion left
             </div>
-            <h2>{{user?.name}}, Select interests and start budget</h2>
+            <h2><span>{{user?.name}}</span>, Select interests and start budget</h2>
             <!-- <h1>Spend the State's money carefully...</h1> -->
+            <a class="see-chart" href="#chart">See Chart</a>
         </div>
         <h1 *ngIf="!user?.name">Welcome!</h1>
         <a *ngIf="!user?.name" routerLink="/login">Join and get $100 billion budget to spend</a>
@@ -15,6 +16,6 @@
         <ministry-filter />
         <ministry-list [ministries]="ministries$ | async" (removeMinistry)="onRemoveMinistry($event)" />
     </div>
-    <Charts />
+    <Charts id="chart"/>
     <router-outlet></router-outlet>
 </section>

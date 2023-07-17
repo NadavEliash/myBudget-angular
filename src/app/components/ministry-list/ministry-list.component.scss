@@ -20,9 +20,10 @@
         border-radius: 1rem;
     }
 
-    @media(max-width: 600px) {
+    @media(max-width: 800px) {
         min-width: 260px;
-        margin-inline: 10px;     
+        margin-inline: 10px;
+        height: 52vh;
     }
 }
 
@@ -111,7 +112,7 @@
         justify-self: center;
         display: flex;
         align-items: center;
-    
+
         button {
             margin-inline: 5px;
             padding-inline: 5px;
@@ -120,11 +121,11 @@
             cursor: pointer;
             border: 0;
         }
-    
+
         img {
             width: 25px;
             filter: invert(.8);
-    
+
             &:hover {
                 scale: 1.1;
                 transition: .4s;
@@ -134,21 +135,28 @@
     }
 
     @media(max-width: 600px) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         margin-inline: 4px;
         padding: .5rem;
-        
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr 1fr;
+
+        .ministry-preview {
+            grid-column: 1 / -1;
+        }
+
         .action {
-            // flex-direction: column;
-            // translate: -15%;
+            grid-row: 2;
             width: 70px;
             flex-direction: row-reverse;
+            gap: .5rem;
+
             button {
                 margin: 0;
             }
         }
+
+        .spend {
+            justify-self: end;
+        }
     }
 }
-

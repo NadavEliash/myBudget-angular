@@ -1,6 +1,6 @@
 <ul class="ministry-list-ul">
     <li class="ministry-list" *ngFor="let ministry of ministries">
-        <ministry-preview routerLink="/ministry/{{ministry._id}}" [ministry]="ministry" />
+        <ministry-preview class="ministry-preview" routerLink="/ministry/{{ministry._id}}" [ministry]="ministry" />
         <div class="action">
             <button routerLink="edit/{{ministry._id}}">
                 <img src="https://www.svgrepo.com/show/510965/edit-pencil-01.svg" alt="edit">
@@ -9,6 +9,8 @@
                 <img src="https://www.svgrepo.com/show/502608/delete-2.svg" alt="delete">
             </button>
         </div>
+        <spend class="spend" [ministry]="ministry" />
+        
         <div *ngIf="showMsg.ministryToMsg === ministry.name" class="user-msg">
             <button class="close-button" (click)="showMsg.ministryToMsg = ''">X</button>
             <h1>Are you sure you want to remove <br><span>"{{ministry.name}}"</span><br>from the list?</h1>
@@ -16,6 +18,5 @@
         </div>
         <div *ngIf="showMsg.ministryToMsg === ministry.name" class="background-clicker"
             (click)="showMsg.ministryToMsg = ''"></div>
-        <spend [ministry]="ministry" />
     </li>
 </ul>

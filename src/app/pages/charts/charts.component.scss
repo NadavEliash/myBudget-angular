@@ -5,7 +5,10 @@
     padding: 1rem;
     width: max-content;
     margin-bottom: 1rem;
-
+    
+    @media(max-width: 800px) {
+        margin-inline: auto;
+    }
 
     button, a {
         margin-inline: auto;

@@ -40,8 +40,7 @@
         border-radius: 2rem;
         padding: .8rem;
         padding-top: .6rem;
-        margin-block: 1rem;
-        margin-left: 1rem;
+        margin: 1rem .5rem;
         height: 3rem;
         padding-inline: 1rem;
         cursor: pointer;
@@ -73,6 +72,10 @@
         }
     }
 
+    .see-chart {
+        display: none;
+    }
+
     @media(max-width: 600px) {
         min-width: 260px;
 
@@ -81,11 +84,13 @@
 
             input {
                 margin: 0;
+                width: 100%;
             }
         }
 
         .add-ministry {
             margin-block: 4px;
+            margin-left: 1rem;
 
             span {
                 display: none;
